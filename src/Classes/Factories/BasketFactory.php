@@ -1,11 +1,11 @@
 <?php
 
-namespace app\Classes\Factories;
+namespace AcmeWidgetCo\Classes\Factories;
 
-use app\Classes\Basket;
-use app\Classes\ProductCatalogue;
-use app\Classes\Strategies\SimpleDeliveryChargeRulesStrategy;
-use app\Classes\Strategies\SimpleOffersStrategy;
+use AcmeWidgetCo\Classes\Basket;
+use AcmeWidgetCo\Classes\ProductCatalogue;
+use AcmeWidgetCo\Classes\Strategies\SimpleDeliveryChargeRulesStrategy;
+use AcmeWidgetCo\Classes\Strategies\SimpleOffersStrategy;
 
 class BasketFactory
 {

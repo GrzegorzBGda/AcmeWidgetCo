@@ -1,9 +1,9 @@
 <?php
 
-namespace app\Classes;
+namespace AcmeWidgetCo\Classes;
 
-use app\Classes\Builders\BasketBuilder;
-use app\Classes\Interfaces\iBasket;
+use AcmeWidgetCo\Classes\Builders\BasketBuilder;
+use AcmeWidgetCo\Classes\Interfaces\iBasket;
 
 class Basket implements iBasket
 {

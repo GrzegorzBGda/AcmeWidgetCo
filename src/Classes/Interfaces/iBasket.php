@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Classes\Interfaces;
+namespace AcmeWidgetCo\Classes\Interfaces;
 
 interface iBasket
 {

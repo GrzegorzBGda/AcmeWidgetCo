@@ -1,8 +1,8 @@
 <?php
 
-namespace app\Classes\Interfaces;
+namespace AcmeWidgetCo\Classes\Interfaces;
 
-use app\Classes\ProductCatalogue;
+use AcmeWidgetCo\Classes\ProductCatalogue;
 
 interface iOffersStrategy
 {

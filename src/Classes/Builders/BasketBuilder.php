@@ -1,25 +1,25 @@
 <?php
 
-namespace app\Classes\Builders;
+namespace AcmeWidgetCo\Classes\Builders;
 
-use app\Classes\ProductCatalogue;
-use app\Classes\Strategies\SimpleDeliveryChargeRulesStrategy;
-use app\Classes\Strategies\SimpleOffersStrategy;
+use AcmeWidgetCo\Classes\ProductCatalogue;
+use AcmeWidgetCo\Classes\Strategies\SimpleDeliveryChargeRulesStrategy;
+use AcmeWidgetCo\Classes\Strategies\SimpleOffersStrategy;
 
 trait BasketBuilder
 {
     /**
-     * @var \app\Classes\ProductCatalogue
+     * @var \AcmeWidgetCo\Classes\ProductCatalogue
      */
-    private ProductCatalogue $productsCatalogue;
+    public ProductCatalogue $productsCatalogue;
 
     /**
-     * @var \app\Classes\Strategies\SimpleDeliveryChargeRulesStrategy
+     * @var \AcmeWidgetCo\Classes\Strategies\SimpleDeliveryChargeRulesStrategy
      */
     private SimpleDeliveryChargeRulesStrategy $deliveryChargeRulesStrategy;
 
     /**
-     * @var \app\Classes\Strategies\SimpleOffersStrategy
+     * @var \AcmeWidgetCo\Classes\Strategies\SimpleOffersStrategy
      */
     private SimpleOffersStrategy $offersStrategy;
 

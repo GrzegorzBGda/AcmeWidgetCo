@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Classes\Strategies;
+namespace AcmeWidgetCo\Classes\Strategies;
 
 class SimpleDeliveryChargeRulesStrategy
 {
