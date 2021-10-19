@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+  php-httpd:
+    image: php:7.4-apache
+    ports:
+      - 8081:80
+    volumes:
+      - "./src:/var/www/html/AcmeWidgetCo"
+
+  composer:
+    image: composer
+    command: composer install
+    volumes:
+      - ./src:/src
+    working_dir: /src
+
+  mariadb:
+    image: mariadb:10.5.2
+    ports:
+      - 3307:3306
+    volumes:
+      - mariadb-volume:/var/lib/mysql
+    environment:
+      TZ: "Poland"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+      MYSQL_ROOT_PASSWORD: "LincolnIsTheMan"
+      MYSQL_USER: 'grzegorzb'
+      MYSQL_PASSWORD: '11235813'
+      MYSQL_DATABASE: 'acmecodb'
+
+volumes:
+  mariadb-volume:
