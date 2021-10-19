@@ -39,12 +39,14 @@ services:
 
   mariadb:
     image: mariadb:10.5.2
+    ports:
+      - 3307:3306
     volumes:
       - mariadb-volume:/var/lib/mysql
     environment:
       TZ: "Poland"
       MYSQL_ALLOW_EMPTY_PASSWORD: "no"
-      MYSQL_ROOT_PASSWORD: "lincolistheman"
+      MYSQL_ROOT_PASSWORD: "LincolnIsTheMan"
       MYSQL_USER: 'grzegorzb'
       MYSQL_PASSWORD: '11235813'
       MYSQL_DATABASE: 'acmecodb'
