@@ -3,6 +3,7 @@ version: '3.7'
 services:
   composer:
     image: composer
+    command: composer install
     environment:
       - COMPOSER_CACHE_DIR=/app/var/cache/composer
     volumes:
@@ -35,3 +36,18 @@ services:
       - .:/app
       - ./var/log/nginx:/var/log/nginx
       - .conf/nginx/AcmeWidgetCo.conf:/etc/nginx/conf.d/default.conf
+
+  mariadb:
+    image: mariadb:10.5.2
+    volumes:
+      - mariadb-volume:/var/lib/mysql
+    environment:
+      TZ: "Poland"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+      MYSQL_ROOT_PASSWORD: "lincolistheman"
+      MYSQL_USER: 'grzegorzb'
+      MYSQL_PASSWORD: '11235813'
+      MYSQL_DATABASE: 'acmecodb'
+
+volumes:
+  mariadb-volume:
