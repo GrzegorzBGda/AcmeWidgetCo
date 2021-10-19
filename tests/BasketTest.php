@@ -8,6 +8,9 @@ use PHPUnit\Framework\TestCase;
 
 class BasketTest extends TestCase
 {
+    /**
+     * @covers \AcmeWidgetCo\Classes\Basket::add
+     */
     public function testShouldAddProductsToBasket(): void
     {
         $basketFactory = new BasketFactory();
@@ -41,7 +44,7 @@ class BasketTest extends TestCase
 
 
     /**
-     * @throws \Exception
+     * @covers \AcmeWidgetCo\Classes\Basket::total()
      */
     public function testShouldCalculateTotalForProductsB01AndG01(): void
     {
@@ -53,7 +56,9 @@ class BasketTest extends TestCase
         self::assertEquals(37.85, $basket->total());
     }
 
+
     /**
+     * @covers \AcmeWidgetCo\Classes\Basket::total()
      * @throws \Exception
      */
     public function testShouldCalculateTotalForProductsR01AndR01(): void
@@ -67,6 +72,7 @@ class BasketTest extends TestCase
     }
 
     /**
+     * @covers \AcmeWidgetCo\Classes\Basket::total()
      * @throws \Exception
      */
     public function testShouldCalculateTotalForProductsR01AndG01(): void
@@ -80,6 +86,7 @@ class BasketTest extends TestCase
     }
 
     /**
+     * @covers \AcmeWidgetCo\Classes\Basket::total()
      * @throws \Exception
      */
     public function testShouldCalculateTotalForProductsB01AndB01AndR01AndR01AndR01(): void
