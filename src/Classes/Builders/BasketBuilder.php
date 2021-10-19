@@ -3,8 +3,8 @@
 namespace AcmeWidgetCo\Classes\Builders;
 
 use AcmeWidgetCo\Classes\ProductCatalogue;
-use AcmeWidgetCo\Classes\Strategies\SimpleDeliveryChargeRulesStrategy;
-use AcmeWidgetCo\Classes\Strategies\SimpleOffersStrategy;
+use AcmeWidgetCo\Classes\Strategies\DeliveryChargeRulesStrategy;
+use AcmeWidgetCo\Classes\Strategies\OffersStrategy;
 
 trait BasketBuilder
 {
@@ -12,21 +12,18 @@ trait BasketBuilder
      * @var \AcmeWidgetCo\Classes\ProductCatalogue
      */
     public ProductCatalogue $productsCatalogue;
-
     /**
-     * @var \AcmeWidgetCo\Classes\Strategies\SimpleDeliveryChargeRulesStrategy
+     * @var \AcmeWidgetCo\Classes\Strategies\DeliveryChargeRulesStrategy
      */
-    private SimpleDeliveryChargeRulesStrategy $deliveryChargeRulesStrategy;
-
+    private DeliveryChargeRulesStrategy $deliveryChargeRulesStrategy;
     /**
-     * @var \AcmeWidgetCo\Classes\Strategies\SimpleOffersStrategy
+     * @var \AcmeWidgetCo\Classes\Strategies\OffersStrategy
      */
-    private SimpleOffersStrategy $offersStrategy;
-
+    private OffersStrategy $offersStrategy;
 
 
     /**
-     * @param \app\Classes\ProductCatalogue $productCatalogue
+     * @param \AcmeWidgetCo\Classes\ProductCatalogue $productCatalogue
      * @return $this
      */
     public function setProductCatalogue(ProductCatalogue $productCatalogue): self
@@ -38,10 +35,19 @@ trait BasketBuilder
 
 
     /**
-     * @param \app\Classes\Strategies\SimpleDeliveryChargeRulesStrategy $deliveryChargeRulesStrategy
+     * @return \AcmeWidgetCo\Classes\ProductCatalogue
+     */
+    public function getProductsCatalogueStrategy(): ProductCatalogue
+    {
+        return $this->productsCatalogue;
+    }
+
+
+    /**
+     * @param \AcmeWidgetCo\Classes\Strategies\DeliveryChargeRulesStrategy $deliveryChargeRulesStrategy
      * @return $this
      */
-    public function setDeliveryChargeRules(SimpleDeliveryChargeRulesStrategy $deliveryChargeRulesStrategy): self
+    public function setDeliveryChargeRulesStrategy(DeliveryChargeRulesStrategy $deliveryChargeRulesStrategy): self
     {
         $this->deliveryChargeRulesStrategy = $deliveryChargeRulesStrategy;
 
@@ -50,13 +56,31 @@ trait BasketBuilder
 
 
     /**
-     * @param \app\Classes\Strategies\SimpleOffersStrategy $offersStrategy
+     * @return \AcmeWidgetCo\Classes\Strategies\DeliveryChargeRulesStrategy
+     */
+    public function getDeliveryChargeRulesStrategy(): DeliveryChargeRulesStrategy
+    {
+        return $this->deliveryChargeRulesStrategy;
+    }
+
+
+    /**
+     * @param \AcmeWidgetCo\Classes\Strategies\OffersStrategy $offersStrategy
      * @return $this
      */
-    public function setOffers(SimpleOffersStrategy $offersStrategy): self
+    public function setOffersStrategy(OffersStrategy $offersStrategy): self
     {
         $this->offersStrategy = $offersStrategy;
 
         return $this;
+    }
+
+
+    /**
+     * @return \AcmeWidgetCo\Classes\Strategies\OffersStrategy
+     */
+    public function getOffersStrategy(): OffersStrategy
+    {
+        return $this->offersStrategy;
     }
 }

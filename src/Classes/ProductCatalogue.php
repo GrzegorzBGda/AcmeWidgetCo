@@ -38,4 +38,13 @@ class ProductCatalogue
 
         return $foundProduct;
     }
+
+
+    /**
+     * @throws \Exception
+     */
+    public function getProductPriceByCode($productCode): float
+    {
+        return $this->getProductByCode($productCode)['price'];
+    }
 }
