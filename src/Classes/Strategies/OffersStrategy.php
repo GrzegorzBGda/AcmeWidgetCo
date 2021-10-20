@@ -17,17 +17,20 @@ class OffersStrategy implements iOffersStrategy
     public function total(Basket $basket): float
     {
         $total = 0;
-        $productsAddedToTotal = [];
+        $productsAddedToTotalCount = [];
         foreach ($basket->getProducts() as $productCode) {
-            $productPrice = $basket->getProductsCatalogueStrategy()->getProductPriceByCode($productCode);
-            $productsAddedToTotalCount = array_count_values($productsAddedToTotal);
+            $productPrice = $basket->getProductsCatalogue()->getProductPriceByCode($productCode);
+
+            if (!isset($productsAddedToTotalCount[$productCode])) {
+                $productsAddedToTotalCount[$productCode] = 0;
+            }
+            $productsAddedToTotalCount[$productCode]++;
 
             if ($this->shouldPriceBeDiscounted($productsAddedToTotalCount, $productCode)) {
                 $productPrice /= 2;
             }
 
             $total += $productPrice;
-            $productsAddedToTotal[] = $productCode;
         }
 
         $deliveryCharge = $basket->getDeliveryChargeRulesStrategy()->getDeliveryCharge($total);
@@ -56,10 +59,10 @@ class OffersStrategy implements iOffersStrategy
             return false;
         }
 
-        if ($productsAddedToTotalCount[$productCode] !== 1) {
+        if ($productsAddedToTotalCount[$productCode] !== 2) {
             return false;
         }
-        
+
         return true;
     }
 }

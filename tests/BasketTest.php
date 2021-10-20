@@ -9,6 +9,20 @@ use PHPUnit\Framework\TestCase;
 class BasketTest extends TestCase
 {
     /**
+     * @covers
+     */
+    public function testShouldCheckIfBasketContainsAllNecessaryFields(): void
+    {
+        $basketFactory = new BasketFactory();
+        $basket = $basketFactory->createBasket();
+
+        self::assertObjectHasAttribute("productsCatalogue", $basket, "Basket does not contain productsCatalogue field");
+        self::assertObjectHasAttribute("deliveryChargeRulesStrategy", $basket, "Basket does not contain deliveryChargeRulesStrategy field");
+        self::assertObjectHasAttribute("offersStrategy", $basket, "Basket does not contain offersStrategy field");
+    }
+
+
+    /**
      * @covers \AcmeWidgetCo\Classes\Basket::add
      */
     public function testShouldAddProductsToBasket(): void
@@ -72,6 +86,7 @@ class BasketTest extends TestCase
         self::assertEquals(54.37, $basket->total());
     }
 
+
     /**
      * @covers \AcmeWidgetCo\Classes\Basket::total()
      * @throws \Exception
@@ -85,6 +100,7 @@ class BasketTest extends TestCase
 
         self::assertEquals(60.85, $basket->total());
     }
+
 
     /**
      * @covers \AcmeWidgetCo\Classes\Basket::total()

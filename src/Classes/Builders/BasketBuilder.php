@@ -37,7 +37,7 @@ trait BasketBuilder
     /**
      * @return \AcmeWidgetCo\Classes\Interfaces\iProductCatalogue
      */
-    public function getProductsCatalogueStrategy(): iProductCatalogue
+    public function getProductsCatalogue(): iProductCatalogue
     {
         return $this->productsCatalogue;
     }
