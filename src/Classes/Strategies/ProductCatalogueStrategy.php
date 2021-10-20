@@ -16,17 +16,13 @@ class ProductCatalogueStrategy implements iProductCatalogueStrategy
      */
     public function getProductByCode(string $productCode, ProductCatalogueDataStructure $productCatalogueDataStructure): array
     {
-        $foundProduct = null;
         foreach ($productCatalogueDataStructure->getProducts() as $product) {
             if ($product['code'] === $productCode) {
-                $foundProduct = $product;
+                return $product;
             }
         }
-        if (!$foundProduct) {
-            throw new Exception('There is no product with code: ' . $productCode);
-        }
 
-        return $foundProduct;
+        throw new Exception('There is no product with code: ' . $productCode);
     }
 
 
@@ -36,8 +32,11 @@ class ProductCatalogueStrategy implements iProductCatalogueStrategy
      * @return float
      * @throws \Exception
      */
-    public function getProductPriceByCode(string $productCode, ProductCatalogueDataStructure $productCatalogueDataStructure): float
-    {
+    public
+    function getProductPriceByCode(
+        string $productCode,
+        ProductCatalogueDataStructure $productCatalogueDataStructure
+    ): float {
         return $this->getProductByCode($productCode, $productCatalogueDataStructure)['price'];
     }
 }
