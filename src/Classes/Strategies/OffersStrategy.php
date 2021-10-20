@@ -52,14 +52,14 @@ class OffersStrategy implements iOffersStrategy
      */
     private function shouldPriceBeDiscounted(array $productsAddedToTotalCount, string $productCode): bool
     {
-        if ($productsAddedToTotalCount[$productCode] !== 1) {
-            return false;
-        }
-
         if ($productCode !== ProductCatalogueDataStructure::PRODUCT_RED_WIDGET) {
             return false;
         }
 
+        if ($productsAddedToTotalCount[$productCode] !== 1) {
+            return false;
+        }
+        
         return true;
     }
 }
