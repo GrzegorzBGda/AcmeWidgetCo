@@ -8,21 +8,6 @@ use Exception;
 
 class ProductCatalogueStrategy implements iProductCatalogueStrategy
 {
-//    /**
-//     * @var \AcmeWidgetCo\Classes\ProductCatalogueDataStructure
-//     */
-//    private ProductCatalogueDataStructure $productCatalogueDataStructure;
-//
-//
-//    /**
-//     * @param \AcmeWidgetCo\Classes\ProductCatalogueDataStructure $productCatalogueDataStructure
-//     */
-//    public function __construct(ProductCatalogueDataStructure $productCatalogueDataStructure)
-//    {
-//        $this->productCatalogueDataStructure = $productCatalogueDataStructure;
-//    }
-
-
     /**
      * @param string $productCode
      * @param \AcmeWidgetCo\Classes\ProductCatalogueDataStructure $productCatalogueDataStructure
