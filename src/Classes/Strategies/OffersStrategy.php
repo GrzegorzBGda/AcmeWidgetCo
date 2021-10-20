@@ -4,7 +4,7 @@ namespace AcmeWidgetCo\Classes\Strategies;
 
 use AcmeWidgetCo\Classes\Basket;
 use AcmeWidgetCo\Classes\Interfaces\iOffersStrategy;
-use AcmeWidgetCo\Classes\ProductCatalogue;
+use AcmeWidgetCo\Classes\ProductCatalogueDataStructure;
 
 class OffersStrategy implements iOffersStrategy
 {
@@ -56,7 +56,7 @@ class OffersStrategy implements iOffersStrategy
             return false;
         }
 
-        if ($productCode !== ProductCatalogue::PRODUCT_RED_WIDGET) {
+        if ($productCode !== ProductCatalogueDataStructure::PRODUCT_RED_WIDGET) {
             return false;
         }
 

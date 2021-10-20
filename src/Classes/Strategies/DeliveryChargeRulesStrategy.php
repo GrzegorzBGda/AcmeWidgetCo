@@ -2,9 +2,14 @@
 
 namespace AcmeWidgetCo\Classes\Strategies;
 
-class DeliveryChargeRulesStrategy
-{
+use AcmeWidgetCo\Classes\Interfaces\iDeliveryChargeRulesStrategy;
 
+class DeliveryChargeRulesStrategy implements iDeliveryChargeRulesStrategy
+{
+    /**
+     * @param float $total
+     * @return float
+     */
     public function getDeliveryCharge(float $total): float
     {
         switch ($total) {

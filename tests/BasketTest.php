@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use AcmeWidgetCo\Classes\Factories\BasketFactory;
-use AcmeWidgetCo\Classes\ProductCatalogue;
+use AcmeWidgetCo\Classes\ProductCatalogueDataStructure;
 use PHPUnit\Framework\TestCase;
 
 class BasketTest extends TestCase
@@ -15,9 +15,9 @@ class BasketTest extends TestCase
     {
         $basketFactory = new BasketFactory();
         $basket = $basketFactory->createBasket();
-        $basket->add(ProductCatalogue::PRODUCT_RED_WIDGET);
-        $basket->add(ProductCatalogue::PRODUCT_GREEN_WIDGET);
-        $basket->add(ProductCatalogue::PRODUCT_BLUE_WIDGET);
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_RED_WIDGET);
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_GREEN_WIDGET);
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_BLUE_WIDGET);
 
         self::assertCount(
             3,
@@ -45,13 +45,14 @@ class BasketTest extends TestCase
 
     /**
      * @covers \AcmeWidgetCo\Classes\Basket::total()
+     * @throws \Exception
      */
     public function testShouldCalculateTotalForProductsB01AndG01(): void
     {
         $basketFactory = new BasketFactory();
         $basket = $basketFactory->createBasket();
-        $basket->add(ProductCatalogue::PRODUCT_GREEN_WIDGET);
-        $basket->add(ProductCatalogue::PRODUCT_BLUE_WIDGET);
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_GREEN_WIDGET);
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_BLUE_WIDGET);
 
         self::assertEquals(37.85, $basket->total());
     }
@@ -65,8 +66,8 @@ class BasketTest extends TestCase
     {
         $basketFactory = new BasketFactory();
         $basket = $basketFactory->createBasket();
-        $basket->add(ProductCatalogue::PRODUCT_RED_WIDGET);
-        $basket->add(ProductCatalogue::PRODUCT_RED_WIDGET);
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_RED_WIDGET);
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_RED_WIDGET);
 
         self::assertEquals(54.37, $basket->total());
     }
@@ -79,8 +80,8 @@ class BasketTest extends TestCase
     {
         $basketFactory = new BasketFactory();
         $basket = $basketFactory->createBasket();
-        $basket->add(ProductCatalogue::PRODUCT_RED_WIDGET);
-        $basket->add(ProductCatalogue::PRODUCT_GREEN_WIDGET);
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_RED_WIDGET);
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_GREEN_WIDGET);
 
         self::assertEquals(60.85, $basket->total());
     }
@@ -93,11 +94,11 @@ class BasketTest extends TestCase
     {
         $basketFactory = new BasketFactory();
         $basket = $basketFactory->createBasket();
-        $basket->add(ProductCatalogue::PRODUCT_BLUE_WIDGET);
-        $basket->add(ProductCatalogue::PRODUCT_BLUE_WIDGET);
-        $basket->add(ProductCatalogue::PRODUCT_RED_WIDGET);
-        $basket->add(ProductCatalogue::PRODUCT_RED_WIDGET);
-        $basket->add(ProductCatalogue::PRODUCT_RED_WIDGET);
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_BLUE_WIDGET);
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_BLUE_WIDGET);
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_RED_WIDGET);
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_RED_WIDGET);
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_RED_WIDGET);
 
         self::assertEquals(98.27, $basket->total());
     }

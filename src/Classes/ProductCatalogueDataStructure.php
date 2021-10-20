@@ -2,7 +2,9 @@
 
 namespace AcmeWidgetCo\Classes;
 
-class ProductCatalogueDataStructure
+use AcmeWidgetCo\Classes\Interfaces\iProductCatalogueDataStructure;
+
+class ProductCatalogueDataStructure implements iProductCatalogueDataStructure
 {
     public const PRODUCT_RED_WIDGET = 'R01';
     public const PRODUCT_GREEN_WIDGET = 'G01';

@@ -2,40 +2,51 @@
 
 namespace AcmeWidgetCo\Classes;
 
+use AcmeWidgetCo\Classes\Interfaces\iProductCatalogue;
+use AcmeWidgetCo\Classes\Interfaces\iProductCatalogueDataStructure;
 use AcmeWidgetCo\Classes\Interfaces\iProductCatalogueStrategy;
 
-class ProductCatalogue implements iProductCatalogueStrategy
+class ProductCatalogue implements iProductCatalogue
 {
 
     /**
      * @var \AcmeWidgetCo\Classes\Interfaces\iProductCatalogueStrategy
      */
     private iProductCatalogueStrategy $productCatalogueStrategy;
+    /**
+     * @var \AcmeWidgetCo\Classes\Interfaces\iProductCatalogueDataStructure
+     */
+    private iProductCatalogueDataStructure $productCatalogueDataStructure;
 
 
-    public function __construct(iProductCatalogueStrategy $productCatalogueStrategy)
-    {
+    public function __construct(
+        iProductCatalogueDataStructure $productCatalogueDataStructure,
+        iProductCatalogueStrategy $productCatalogueStrategy
+    ) {
         $this->productCatalogueStrategy = $productCatalogueStrategy;
+        $this->productCatalogueDataStructure = $productCatalogueDataStructure;
     }
 
 
     /**
      * @param string $productCode
      * @return array
+     * @throws \Exception
      */
     public function getProductByCode(string $productCode): array
     {
-        return $this->productCatalogueStrategy->getProductByCode($productCode);
+        return $this->productCatalogueStrategy->getProductByCode($productCode, $this->productCatalogueDataStructure);
     }
 
 
     /**
      * @param string $productCode
      * @return float
+     * @throws \Exception
      */
     public function getProductPriceByCode(string $productCode): float
     {
-        return $this->productCatalogueStrategy->getProductPriceByCode($productCode);
+        return $this->productCatalogueStrategy->getProductPriceByCode($productCode, $this->productCatalogueDataStructure);
     }
 
 
@@ -44,6 +55,6 @@ class ProductCatalogue implements iProductCatalogueStrategy
      */
     public function getProducts(): array
     {
-        return $this->products;
+        return $this->productCatalogueDataStructure->getProducts();
     }
 }

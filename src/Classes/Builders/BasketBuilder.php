@@ -2,31 +2,31 @@
 
 namespace AcmeWidgetCo\Classes\Builders;
 
-use AcmeWidgetCo\Classes\ProductCatalogue;
-use AcmeWidgetCo\Classes\Strategies\DeliveryChargeRulesStrategy;
-use AcmeWidgetCo\Classes\Strategies\OffersStrategy;
+use AcmeWidgetCo\Classes\Interfaces\iDeliveryChargeRulesStrategy;
+use AcmeWidgetCo\Classes\Interfaces\iOffersStrategy;
+use AcmeWidgetCo\Classes\Interfaces\iProductCatalogue;
 
 trait BasketBuilder
 {
     /**
-     * @var \AcmeWidgetCo\Classes\ProductCatalogue
+     * @var \AcmeWidgetCo\Classes\Interfaces\iProductCatalogue
      */
-    public ProductCatalogue $productsCatalogue;
+    private iProductCatalogue $productsCatalogue;
     /**
-     * @var \AcmeWidgetCo\Classes\Strategies\DeliveryChargeRulesStrategy
+     * @var \AcmeWidgetCo\Classes\Interfaces\iDeliveryChargeRulesStrategy
      */
-    private DeliveryChargeRulesStrategy $deliveryChargeRulesStrategy;
+    private iDeliveryChargeRulesStrategy $deliveryChargeRulesStrategy;
     /**
-     * @var \AcmeWidgetCo\Classes\Strategies\OffersStrategy
+     * @var \AcmeWidgetCo\Classes\Interfaces\iOffersStrategy
      */
-    private OffersStrategy $offersStrategy;
+    private iOffersStrategy $offersStrategy;
 
 
     /**
-     * @param \AcmeWidgetCo\Classes\ProductCatalogue $productCatalogue
-     * @return $this
+     * @param \AcmeWidgetCo\Classes\Interfaces\iProductCatalogue $productCatalogue
+     * @return \AcmeWidgetCo\Classes\Builders\BasketBuilder|\AcmeWidgetCo\Classes\Basket
      */
-    public function setProductCatalogue(ProductCatalogue $productCatalogue): self
+    public function setProductCatalogue(iProductCatalogue $productCatalogue): self
     {
         $this->productsCatalogue = $productCatalogue;
 
@@ -35,19 +35,28 @@ trait BasketBuilder
 
 
     /**
-     * @return \AcmeWidgetCo\Classes\ProductCatalogue
+     * @return \AcmeWidgetCo\Classes\Interfaces\iProductCatalogue
      */
-    public function getProductsCatalogueStrategy(): ProductCatalogue
+    public function getProductsCatalogueStrategy(): iProductCatalogue
     {
         return $this->productsCatalogue;
     }
 
 
     /**
-     * @param \AcmeWidgetCo\Classes\Strategies\DeliveryChargeRulesStrategy $deliveryChargeRulesStrategy
-     * @return $this
+     * @return \AcmeWidgetCo\Classes\Interfaces\iDeliveryChargeRulesStrategy
      */
-    public function setDeliveryChargeRulesStrategy(DeliveryChargeRulesStrategy $deliveryChargeRulesStrategy): self
+    public function getDeliveryChargeRulesStrategy(): iDeliveryChargeRulesStrategy
+    {
+        return $this->deliveryChargeRulesStrategy;
+    }
+
+
+    /**
+     * @param \AcmeWidgetCo\Classes\Interfaces\iDeliveryChargeRulesStrategy $deliveryChargeRulesStrategy
+     * @return \AcmeWidgetCo\Classes\Builders\BasketBuilder|\AcmeWidgetCo\Classes\Basket
+     */
+    public function setDeliveryChargeRulesStrategy(iDeliveryChargeRulesStrategy $deliveryChargeRulesStrategy): self
     {
         $this->deliveryChargeRulesStrategy = $deliveryChargeRulesStrategy;
 
@@ -56,31 +65,22 @@ trait BasketBuilder
 
 
     /**
-     * @return \AcmeWidgetCo\Classes\Strategies\DeliveryChargeRulesStrategy
+     * @return \AcmeWidgetCo\Classes\Interfaces\iOffersStrategy
      */
-    public function getDeliveryChargeRulesStrategy(): DeliveryChargeRulesStrategy
+    public function getOffersStrategy(): iOffersStrategy
     {
-        return $this->deliveryChargeRulesStrategy;
+        return $this->offersStrategy;
     }
 
 
     /**
-     * @param \AcmeWidgetCo\Classes\Strategies\OffersStrategy $offersStrategy
-     * @return $this
+     * @param \AcmeWidgetCo\Classes\Interfaces\iOffersStrategy $offersStrategy
+     * @return \AcmeWidgetCo\Classes\Builders\BasketBuilder|\AcmeWidgetCo\Classes\Basket
      */
-    public function setOffersStrategy(OffersStrategy $offersStrategy): self
+    public function setOffersStrategy(iOffersStrategy $offersStrategy): self
     {
         $this->offersStrategy = $offersStrategy;
 
         return $this;
-    }
-
-
-    /**
-     * @return \AcmeWidgetCo\Classes\Strategies\OffersStrategy
-     */
-    public function getOffersStrategy(): OffersStrategy
-    {
-        return $this->offersStrategy;
     }
 }

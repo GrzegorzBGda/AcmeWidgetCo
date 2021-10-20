@@ -3,13 +3,14 @@
 namespace AcmeWidgetCo\Classes\Factories;
 
 use AcmeWidgetCo\Classes\Basket;
+use AcmeWidgetCo\Classes\Interfaces\iBasketFactory;
 use AcmeWidgetCo\Classes\ProductCatalogue;
 use AcmeWidgetCo\Classes\ProductCatalogueDataStructure;
 use AcmeWidgetCo\Classes\Strategies\DeliveryChargeRulesStrategy;
 use AcmeWidgetCo\Classes\Strategies\OffersStrategy;
 use AcmeWidgetCo\Classes\Strategies\ProductCatalogueStrategy;
 
-class BasketFactory
+class BasketFactory implements iBasketFactory
 {
     /**
      * @return \AcmeWidgetCo\Classes\Basket
@@ -18,7 +19,7 @@ class BasketFactory
     {
         $basket = new Basket();
         $basket
-            ->setProductCatalogue(new ProductCatalogue(new ProductCatalogueStrategy(new ProductCatalogueDataStructure())))
+            ->setProductCatalogue(new ProductCatalogue(new ProductCatalogueDataStructure(), new ProductCatalogueStrategy))
             ->setDeliveryChargeRulesStrategy(new DeliveryChargeRulesStrategy())
             ->setOffersStrategy(new OffersStrategy());
 

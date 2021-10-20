@@ -2,18 +2,20 @@
 
 namespace AcmeWidgetCo\Classes\Interfaces;
 
-interface iBasket
+interface iProductCatalogue
 {
     /**
      * @param string $productCode
+     * @return array
      */
-    public function add(string $productCode): void;
+    public function getProductByCode(string $productCode): array;
 
 
     /**
+     * @param string $productCode
      * @return float
      */
-    public function total(): float;
+    public function getProductPriceByCode(string $productCode): float;
 
 
     /**
