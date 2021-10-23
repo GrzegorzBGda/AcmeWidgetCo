@@ -2,19 +2,19 @@
 
 namespace AcmeWidgetCo\Classes\Strategies;
 
+use AcmeWidgetCo\Classes\Interfaces\iProductCatalogueDataStructure;
 use AcmeWidgetCo\Classes\Interfaces\iProductCatalogueStrategy;
-use AcmeWidgetCo\Classes\ProductCatalogueDataStructure;
 use Exception;
 
 class ProductCatalogueStrategy implements iProductCatalogueStrategy
 {
     /**
      * @param string $productCode
-     * @param \AcmeWidgetCo\Classes\ProductCatalogueDataStructure $productCatalogueDataStructure
+     * @param iProductCatalogueDataStructure $productCatalogueDataStructure
      * @return array
-     * @throws \Exception
+     * @throws Exception
      */
-    public function getProductByCode(string $productCode, ProductCatalogueDataStructure $productCatalogueDataStructure): array
+    public function getProductByCode(string $productCode, iProductCatalogueDataStructure $productCatalogueDataStructure): array
     {
         foreach ($productCatalogueDataStructure->getProducts() as $product) {
             if ($product['code'] === $productCode) {
@@ -28,11 +28,11 @@ class ProductCatalogueStrategy implements iProductCatalogueStrategy
 
     /**
      * @param string $productCode
-     * @param \AcmeWidgetCo\Classes\ProductCatalogueDataStructure $productCatalogueDataStructure
+     * @param iProductCatalogueDataStructure $productCatalogueDataStructure
      * @return float
-     * @throws \Exception
+     * @throws Exception
      */
-    public function getProductPriceByCode(string $productCode, ProductCatalogueDataStructure $productCatalogueDataStructure): float
+    public function getProductPriceByCode(string $productCode, iProductCatalogueDataStructure $productCatalogueDataStructure): float
     {
         return $this->getProductByCode($productCode, $productCatalogueDataStructure)['price'];
     }
