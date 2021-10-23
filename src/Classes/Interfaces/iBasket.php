@@ -23,39 +23,39 @@ interface iBasket
 
 
     /**
-     * @param \AcmeWidgetCo\Classes\Interfaces\iProductCatalogue $productCatalogue
+     * @param iProductCatalogue $productCatalogue
      * @return $this
      */
     public function setProductCatalogue(iProductCatalogue $productCatalogue): self;
 
 
     /**
-     * @return \AcmeWidgetCo\Classes\Interfaces\iProductCatalogue
+     * @return iProductCatalogue
      */
     public function getProductsCatalogue(): iProductCatalogue;
 
 
     /**
-     * @param \AcmeWidgetCo\Classes\Interfaces\iDeliveryChargeRulesStrategy $deliveryChargeRulesStrategy
+     * @param iDeliveryChargeRulesStrategy $deliveryChargeRulesStrategy
      * @return $this
      */
     public function setDeliveryChargeRulesStrategy(iDeliveryChargeRulesStrategy $deliveryChargeRulesStrategy): self;
 
 
     /**
-     * @return \AcmeWidgetCo\Classes\Interfaces\iDeliveryChargeRulesStrategy
+     * @return iDeliveryChargeRulesStrategy
      */
     public function getDeliveryChargeRulesStrategy(): iDeliveryChargeRulesStrategy;
 
 
     /**
-     * @return \AcmeWidgetCo\Classes\Interfaces\iOffersStrategy
+     * @return iOffersStrategy
      */
     public function getOffersStrategy(): iOffersStrategy;
 
 
     /**
-     * @param \AcmeWidgetCo\Classes\Interfaces\iOffersStrategy $offersStrategy
+     * @param iOffersStrategy $offersStrategy
      * @return $this
      */
     public function setOffersStrategy(iOffersStrategy $offersStrategy): self;

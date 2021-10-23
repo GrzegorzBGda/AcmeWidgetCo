@@ -2,6 +2,7 @@
 
 namespace AcmeWidgetCo\Classes\Builders;
 
+use AcmeWidgetCo\Classes\Basket;
 use AcmeWidgetCo\Classes\Interfaces\iDeliveryChargeRulesStrategy;
 use AcmeWidgetCo\Classes\Interfaces\iOffersStrategy;
 use AcmeWidgetCo\Classes\Interfaces\iProductCatalogue;
@@ -9,22 +10,22 @@ use AcmeWidgetCo\Classes\Interfaces\iProductCatalogue;
 trait BasketBuilder
 {
     /**
-     * @var \AcmeWidgetCo\Classes\Interfaces\iProductCatalogue
+     * @var iProductCatalogue
      */
     private iProductCatalogue $productsCatalogue;
     /**
-     * @var \AcmeWidgetCo\Classes\Interfaces\iDeliveryChargeRulesStrategy
+     * @var iDeliveryChargeRulesStrategy
      */
     private iDeliveryChargeRulesStrategy $deliveryChargeRulesStrategy;
     /**
-     * @var \AcmeWidgetCo\Classes\Interfaces\iOffersStrategy
+     * @var iOffersStrategy
      */
     private iOffersStrategy $offersStrategy;
 
 
     /**
-     * @param \AcmeWidgetCo\Classes\Interfaces\iProductCatalogue $productCatalogue
-     * @return \AcmeWidgetCo\Classes\Builders\BasketBuilder|\AcmeWidgetCo\Classes\Basket
+     * @param iProductCatalogue $productCatalogue
+     * @return BasketBuilder|Basket
      */
     public function setProductCatalogue(iProductCatalogue $productCatalogue): self
     {
@@ -35,7 +36,7 @@ trait BasketBuilder
 
 
     /**
-     * @return \AcmeWidgetCo\Classes\Interfaces\iProductCatalogue
+     * @return iProductCatalogue
      */
     public function getProductsCatalogue(): iProductCatalogue
     {
@@ -44,7 +45,7 @@ trait BasketBuilder
 
 
     /**
-     * @return \AcmeWidgetCo\Classes\Interfaces\iDeliveryChargeRulesStrategy
+     * @return iDeliveryChargeRulesStrategy
      */
     public function getDeliveryChargeRulesStrategy(): iDeliveryChargeRulesStrategy
     {
@@ -53,8 +54,8 @@ trait BasketBuilder
 
 
     /**
-     * @param \AcmeWidgetCo\Classes\Interfaces\iDeliveryChargeRulesStrategy $deliveryChargeRulesStrategy
-     * @return \AcmeWidgetCo\Classes\Builders\BasketBuilder|\AcmeWidgetCo\Classes\Basket
+     * @param iDeliveryChargeRulesStrategy $deliveryChargeRulesStrategy
+     * @return BasketBuilder|Basket
      */
     public function setDeliveryChargeRulesStrategy(iDeliveryChargeRulesStrategy $deliveryChargeRulesStrategy): self
     {
@@ -65,7 +66,7 @@ trait BasketBuilder
 
 
     /**
-     * @return \AcmeWidgetCo\Classes\Interfaces\iOffersStrategy
+     * @return iOffersStrategy
      */
     public function getOffersStrategy(): iOffersStrategy
     {
@@ -74,8 +75,8 @@ trait BasketBuilder
 
 
     /**
-     * @param \AcmeWidgetCo\Classes\Interfaces\iOffersStrategy $offersStrategy
-     * @return \AcmeWidgetCo\Classes\Builders\BasketBuilder|\AcmeWidgetCo\Classes\Basket
+     * @param iOffersStrategy $offersStrategy
+     * @return BasketBuilder|Basket
      */
     public function setOffersStrategy(iOffersStrategy $offersStrategy): self
     {
