@@ -106,7 +106,7 @@ class BasketTest extends TestCase
      * @covers \AcmeWidgetCo\Classes\Basket::total()
      * @throws \Exception
      */
-    public function testShouldCalculateTotalForProductsB01AndB01AndR01AndR01AndR01(): void
+    public function testShouldCalculateTotalForProductsB01AnDB01AndR01AndR01AndR01(): void
     {
         $basketFactory = new BasketFactory();
         $basket = $basketFactory->createBasket();
