@@ -2,12 +2,11 @@
 
 namespace AcmeWidgetCo\Classes\Interfaces;
 
-use AcmeWidgetCo\Classes\Basket;
 
 interface iBasketFactory
 {
     /**
-     * @return \AcmeWidgetCo\Classes\Basket
+     * @return iBasket
      */
-    public function createBasket(): Basket;
+    public function createBasket(): iBasket;
 }

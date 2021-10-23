@@ -41,7 +41,7 @@ class BasketDecorator implements iBasket
      */
     public function total(): float
     {
-        return round($this->basket->total() - ($this->basket->total() * 30 / 100), 2);
+        return round($this->basket->total() - ($this->basket->total() * (30 / 100)), 2);
     }
 
     /**
