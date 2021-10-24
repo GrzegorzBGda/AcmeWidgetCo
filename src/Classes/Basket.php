@@ -32,7 +32,7 @@ final class Basket implements iBasket
 
 
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     public function total(): float
     {

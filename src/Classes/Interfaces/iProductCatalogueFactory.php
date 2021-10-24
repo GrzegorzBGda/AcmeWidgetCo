@@ -11,10 +11,10 @@ interface iProductCatalogueFactory
     /**
      * @return ProductCatalogue
      */
-    public function createProductCatalogue(): ProductCatalogue;
+    public function createProductCatalogue(): iProductCatalogue;
 
     /**
      * @return ProductCatalogue
      */
-    public function createDifferentDataProductCatalogue(): ProductCatalogue;
+    public function createDifferentDataProductCatalogue(): iProductCatalogue;
 }

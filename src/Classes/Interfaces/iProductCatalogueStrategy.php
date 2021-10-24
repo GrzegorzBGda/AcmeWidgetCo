@@ -8,7 +8,7 @@ interface iProductCatalogueStrategy
 {
     /**
      * @param string $productCode
-     * @param \AcmeWidgetCo\Classes\ProductCatalogueDataStructure $productCatalogueDataStructure
+     * @param ProductCatalogueDataStructure $productCatalogueDataStructure
      * @return array
      */
     public function getProductByCode(string $productCode, ProductCatalogueDataStructure $productCatalogueDataStructure): array;
@@ -16,7 +16,7 @@ interface iProductCatalogueStrategy
 
     /**
      * @param string $productCode
-     * @param \AcmeWidgetCo\Classes\ProductCatalogueDataStructure $productCatalogueDataStructure
+     * @param ProductCatalogueDataStructure $productCatalogueDataStructure
      * @return float
      */
     public function getProductPriceByCode(string $productCode, ProductCatalogueDataStructure $productCatalogueDataStructure): float;

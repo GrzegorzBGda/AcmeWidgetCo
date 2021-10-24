@@ -7,7 +7,7 @@ use AcmeWidgetCo\Classes\Basket;
 interface iOffersStrategy
 {
     /**
-     * @param \AcmeWidgetCo\Classes\Basket $basket
+     * @param Basket $basket
      * @return float
      */
     public function total(Basket $basket): float;

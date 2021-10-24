@@ -17,11 +17,25 @@ class Basket30PercentOffOnAllPricesTest extends TestCase
     public function testShouldCalculateTotalForProductsB01AndG01With30PercentDiscount(): void
     {
         $basketFactory = new BasketFactory();
-        $basket = $basketFactory->createBasketWithTotalDiscount();
+        $basket = $basketFactory->createBasket();
 
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_RED_WIDGET);
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_GREEN_WIDGET);
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_BLUE_WIDGET);
+        $basketTotal = $basket->total();
+
+        $basketFactory = new BasketFactory();
+        $basket = $basketFactory->createBasketWithTotalDiscount();
+        $basket->add(ProductCatalogueDataStructure::PRODUCT_RED_WIDGET);
         $basket->add(ProductCatalogueDataStructure::PRODUCT_GREEN_WIDGET);
         $basket->add(ProductCatalogueDataStructure::PRODUCT_BLUE_WIDGET);
 
-        self::assertEquals(26.50, $basket->total());
+        $decoratedBasketTotal = $basket->total();
+
+        $basketTotalWith30PercentOff = round($basketTotal - ($basketTotal * (30 / 100)), 2);
+
+        self::assertNotEquals($basketTotal, $decoratedBasketTotal);
+
+        self::assertEquals($basketTotalWith30PercentOff, $decoratedBasketTotal);
     }
 }

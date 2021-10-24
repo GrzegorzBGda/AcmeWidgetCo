@@ -5,16 +5,17 @@ namespace AcmeWidgetCo\Classes;
 use AcmeWidgetCo\Classes\Interfaces\iProductCatalogue;
 use AcmeWidgetCo\Classes\Interfaces\iProductCatalogueDataStructure;
 use AcmeWidgetCo\Classes\Interfaces\iProductCatalogueStrategy;
+use Exception;
 
 class ProductCatalogue implements iProductCatalogue
 {
 
     /**
-     * @var \AcmeWidgetCo\Classes\Interfaces\iProductCatalogueStrategy
+     * @var iProductCatalogueStrategy
      */
     private iProductCatalogueStrategy $productCatalogueStrategy;
     /**
-     * @var \AcmeWidgetCo\Classes\Interfaces\iProductCatalogueDataStructure
+     * @var iProductCatalogueDataStructure
      */
     private iProductCatalogueDataStructure $productCatalogueDataStructure;
 
@@ -31,7 +32,7 @@ class ProductCatalogue implements iProductCatalogue
     /**
      * @param string $productCode
      * @return array
-     * @throws \Exception
+     * @throws Exception
      */
     public function getProductByCode(string $productCode): array
     {
@@ -42,7 +43,7 @@ class ProductCatalogue implements iProductCatalogue
     /**
      * @param string $productCode
      * @return float
-     * @throws \Exception
+     * @throws Exception
      */
     public function getProductPriceByCode(string $productCode): float
     {
