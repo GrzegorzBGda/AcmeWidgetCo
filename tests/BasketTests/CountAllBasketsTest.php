@@ -37,6 +37,7 @@ class CountAllBasketsTest extends TestCase
             ->addBasket($basket2)
             ->addBasket($basket3);
 
-        self::assertEquals(160.41, $basketComposite->total());
+        $basketsTotal = $basket1->total() + $basket2->total() + $basket3->total();
+        self::assertEquals($basketsTotal, $basketComposite->total());
     }
 }

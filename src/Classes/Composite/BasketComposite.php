@@ -19,7 +19,7 @@ class BasketComposite implements iBasketComposite
     {
         $total = 0;
         foreach ($this->baskets as $basket) {
-            $total = $basket->total();
+            $total += $basket->total();
         }
 
         return $total;
