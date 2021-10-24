@@ -5,14 +5,15 @@ namespace AcmeWidgetCo\Classes\Strategies;
 use AcmeWidgetCo\Classes\Basket;
 use AcmeWidgetCo\Classes\Interfaces\iOffersStrategy;
 use AcmeWidgetCo\Classes\ProductCatalogueDataStructure;
+use Exception;
 
 class OffersStrategy implements iOffersStrategy
 {
 
     /**
-     * @param \AcmeWidgetCo\Classes\Basket $basket
+     * @param Basket $basket
      * @return float
-     * @throws \Exception
+     * @throws Exception
      */
     public function total(Basket $basket): float
     {

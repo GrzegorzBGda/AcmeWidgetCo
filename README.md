@@ -1,7 +1,10 @@
 # AcmeWidgetCo
 
-## Starting app
+## Building app
 docker-compose up -d --build
+
+## Starting app
+docker-compose up -d
 
 ## Running tests
 docker-compose run php vendor/bin/phpunit
