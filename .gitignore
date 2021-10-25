@@ -1,4 +1,4 @@
 vendor/
-var/
 .phpunit.cache
 .phpunit.result.cache
+/var/cache/
