@@ -11,7 +11,7 @@ services:
 
   php:
     image: php:7.4-fpm
-#    build: .conf/php/
+    build: .conf/php/
     restart: always
     expose:
       - 9001
