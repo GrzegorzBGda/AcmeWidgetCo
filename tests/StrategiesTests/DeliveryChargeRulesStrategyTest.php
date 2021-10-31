@@ -14,8 +14,8 @@ class DeliveryChargeRulesStrategyTest extends TestCase
     {
         $deliveryChargeRulesStrategy = new DeliveryChargeRulesStrategy();
 
-        self::assertEquals(4.95, $deliveryChargeRulesStrategy->getDeliveryCharge(49));
-        self::assertEquals(2.95, $deliveryChargeRulesStrategy->getDeliveryCharge(89));
-        self::assertEquals(0, $deliveryChargeRulesStrategy->getDeliveryCharge(91));
+        self::assertEquals(495, $deliveryChargeRulesStrategy->getDeliveryCharge(4900));
+        self::assertEquals(295, $deliveryChargeRulesStrategy->getDeliveryCharge(8900));
+        self::assertEquals(0, $deliveryChargeRulesStrategy->getDeliveryCharge(9100));
     }
 }

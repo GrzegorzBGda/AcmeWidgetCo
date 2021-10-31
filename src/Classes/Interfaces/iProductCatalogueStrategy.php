@@ -17,7 +17,7 @@ interface iProductCatalogueStrategy
     /**
      * @param string $productCode
      * @param ProductCatalogueDataStructure $productCatalogueDataStructure
-     * @return float
+     * @return int
      */
-    public function getProductPriceByCode(string $productCode, ProductCatalogueDataStructure $productCatalogueDataStructure): float;
+    public function getProductPriceByCode(string $productCode, ProductCatalogueDataStructure $productCatalogueDataStructure): int;
 }

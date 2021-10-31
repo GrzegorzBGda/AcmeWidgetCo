@@ -97,7 +97,7 @@ class DifferentDataBasketTest extends TestCase
         $basket->add(DifferentProductCatalogueDataStructure::PRODUCT_DIFFERENT_RED_WIDGET);
         $basket->add(DifferentProductCatalogueDataStructure::PRODUCT_DIFFERENT_GREEN_WIDGET);
 
-        self::assertEquals(155.2, $basket->total());
+        self::assertEquals(155.21, $basket->total());
     }
 
     /**
@@ -111,7 +111,7 @@ class DifferentDataBasketTest extends TestCase
         $basket->add(DifferentProductCatalogueDataStructure::PRODUCT_DIFFERENT_RED_WIDGET);
         $basket->add(DifferentProductCatalogueDataStructure::PRODUCT_DIFFERENT_GREEN_WIDGET);
 
-        self::assertEquals(155.2, $basket->total());
+        self::assertEquals(155.21, $basket->total());
     }
 
 
@@ -141,7 +141,7 @@ class DifferentDataBasketTest extends TestCase
         $basket->add(DifferentProductCatalogueDataStructure::PRODUCT_DIFFERENT_RED_WIDGET);
         $basket->add(DifferentProductCatalogueDataStructure::PRODUCT_DIFFERENT_GREEN_WIDGET);
 
-        self::assertEquals(155.2, $basket->total());
+        self::assertEquals(155.21, $basket->total());
     }
 
 
@@ -160,6 +160,6 @@ class DifferentDataBasketTest extends TestCase
         $basket->add(DifferentProductCatalogueDataStructure::PRODUCT_DIFFERENT_RED_WIDGET);
 
 
-        self::assertEquals(373.8, $basket->total());
+        self::assertEquals(373.81, $basket->total());
     }
 }

@@ -42,10 +42,10 @@ class ProductCatalogue implements iProductCatalogue
 
     /**
      * @param string $productCode
-     * @return float
+     * @return int
      * @throws Exception
      */
-    public function getProductPriceByCode(string $productCode): float
+    public function getProductPriceByCode(string $productCode): int
     {
         return $this->productCatalogueStrategy->getProductPriceByCode($productCode, $this->productCatalogueDataStructure);
     }

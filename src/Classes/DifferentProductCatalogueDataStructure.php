@@ -10,12 +10,12 @@ class DifferentProductCatalogueDataStructure implements iProductCatalogueDataStr
     public const PRODUCT_DIFFERENT_GREEN_WIDGET = 'DG01';
     public const PRODUCT_DIFFERENT_BLUE_WIDGET = 'DB01';
     /**
-     * @var array|float[]
+     * @var array|int[]
      */
     private array $products = [
-        ['product' => 'Different Red Widget', 'code' => self::PRODUCT_DIFFERENT_RED_WIDGET, 'price' => 121.13],
-        ['product' => 'Different Green Widget', 'code' => self::PRODUCT_DIFFERENT_GREEN_WIDGET, 'price' => 34.08],
-        ['product' => 'Different Blue Widget', 'code' => self::PRODUCT_DIFFERENT_BLUE_WIDGET, 'price' => 5.21],
+        ['product' => 'Different Red Widget', 'code' => self::PRODUCT_DIFFERENT_RED_WIDGET, 'price' => 12113],
+        ['product' => 'Different Green Widget', 'code' => self::PRODUCT_DIFFERENT_GREEN_WIDGET, 'price' => 3408],
+        ['product' => 'Different Blue Widget', 'code' => self::PRODUCT_DIFFERENT_BLUE_WIDGET, 'price' => 521],
     ];
 
 

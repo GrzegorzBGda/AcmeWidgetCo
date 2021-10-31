@@ -7,23 +7,23 @@ use AcmeWidgetCo\Classes\Interfaces\iDeliveryChargeRulesStrategy;
 class DeliveryChargeRulesStrategy implements iDeliveryChargeRulesStrategy
 {
     /**
-     * @param float $total
-     * @return float
+     * @param int $total
+     * @return int
      */
-    public function getDeliveryCharge(float $total): float
+    public function getDeliveryCharge(int $total): int
     {
         switch ($total) {
-            case $total < 50:
-                $deliveryCost = 4.95;
+            case $total < 5000:
+                $deliveryCost = 495;
                 break;
-            case $total < 90:
-                $deliveryCost = 2.95;
+            case $total < 9000:
+                $deliveryCost = 295;
                 break;
-            case $total >= 90:
+            case $total >= 9000:
                 $deliveryCost = 0;
                 break;
             default:
-                $deliveryCost = 50;
+                $deliveryCost = 5000;
         }
 
         return $deliveryCost;

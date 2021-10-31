@@ -5,8 +5,8 @@ namespace AcmeWidgetCo\Classes\Interfaces;
 interface iDeliveryChargeRulesStrategy
 {
     /**
-     * @param float $total
-     * @return float
+     * @param int $total
+     * @return int
      */
-    public function getDeliveryCharge(float $total): float;
+    public function getDeliveryCharge(int $total): int;
 }

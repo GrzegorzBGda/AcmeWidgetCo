@@ -35,17 +35,17 @@ class OffersStrategy implements iOffersStrategy
         }
 
         $deliveryCharge = $basket->getDeliveryChargeRulesStrategy()->getDeliveryCharge($total);
-        return $this->roundPrice($total + $deliveryCharge);
+        return $this->changeToMoneyFormat($total + $deliveryCharge);
     }
 
 
     /**
-     * @param float $price
+     * @param int $price
      * @return float
      */
-    private function roundPrice(float $price): float
+    private function changeToMoneyFormat(int $price): float
     {
-        return floor(($price) * 100) / 100;
+        return $price / 100;
     }
 
 
