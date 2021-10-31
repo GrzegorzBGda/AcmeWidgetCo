@@ -1,4 +1,4 @@
-# AcmeWidgetCo
+# String reverse algorithm example
 
 ## Building app
 docker-compose up -d --build
