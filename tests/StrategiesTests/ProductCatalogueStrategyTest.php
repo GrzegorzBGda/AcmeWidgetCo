@@ -18,7 +18,7 @@ class ProductCatalogueStrategyTest extends TestCase
         $productCatalogueDataStructure = new ProductCatalogueDataStructure();
         $productCatalogueStrategy = new ProductCatalogueStrategy();
 
-        $productData = ['product' => 'Red Widget', 'code' => 'R01', 'price' => 32.95];
+        $productData = ['product' => 'Red Widget', 'code' => 'R01', 'price' => 3295];
         $productFromCatalogue = $productCatalogueStrategy->getProductByCode(
             ProductCatalogueDataStructure::PRODUCT_RED_WIDGET,
             $productCatalogueDataStructure
@@ -39,7 +39,7 @@ class ProductCatalogueStrategyTest extends TestCase
         $productCatalogueDataStructure = new ProductCatalogueDataStructure();
         $productCatalogueStrategy = new ProductCatalogueStrategy();
 
-        $productData = ['product' => 'Green Widget', 'code' => 'G01', 'price' => 24.95];
+        $productData = ['product' => 'Green Widget', 'code' => 'G01', 'price' => 2495];
         $productFromCatalogue = $productCatalogueStrategy->getProductByCode(
             ProductCatalogueDataStructure::PRODUCT_GREEN_WIDGET,
             $productCatalogueDataStructure
@@ -60,7 +60,7 @@ class ProductCatalogueStrategyTest extends TestCase
         $productCatalogueDataStructure = new ProductCatalogueDataStructure();
         $productCatalogueStrategy = new ProductCatalogueStrategy();
 
-        $productData = ['product' => 'Blue Widget', 'code' => 'B01', 'price' => 7.95];
+        $productData = ['product' => 'Blue Widget', 'code' => 'B01', 'price' => 795];
         $productFromCatalogue = $productCatalogueStrategy->getProductByCode(
             ProductCatalogueDataStructure::PRODUCT_BLUE_WIDGET,
             $productCatalogueDataStructure

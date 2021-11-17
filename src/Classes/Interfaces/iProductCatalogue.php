@@ -13,9 +13,9 @@ interface iProductCatalogue
 
     /**
      * @param string $productCode
-     * @return float
+     * @return int
      */
-    public function getProductPriceByCode(string $productCode): float;
+    public function getProductPriceByCode(string $productCode): int;
 
 
     /**

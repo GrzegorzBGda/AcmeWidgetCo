@@ -29,10 +29,10 @@ class ProductCatalogueStrategy implements iProductCatalogueStrategy
     /**
      * @param string $productCode
      * @param iProductCatalogueDataStructure $productCatalogueDataStructure
-     * @return float
+     * @return int
      * @throws Exception
      */
-    public function getProductPriceByCode(string $productCode, iProductCatalogueDataStructure $productCatalogueDataStructure): float
+    public function getProductPriceByCode(string $productCode, iProductCatalogueDataStructure $productCatalogueDataStructure): int
     {
         return $this->getProductByCode($productCode, $productCatalogueDataStructure)['price'];
     }

@@ -22,7 +22,10 @@ http://localhost:8080/
 7. The way offers are build will change so OffersStrategy allows logic to be changed.
 8. Delivery charge will change so DeliveryChargeRulesStrategy allows logic to be changed as well.
 9. All classes are connected through abstract level - interfaces.
-10. Composer was added to the project. I'm using autoloader and PhpUnit. 
+10. Money is stored as integers to avoid missing one cent issue.
+11. Exercise is using composer to add autoloader and PhpUnit.
+12. Example of BasketDecorator added, to present how new business logic should be introduced.
+13. Composite example added to demonstrate working on a group of Baskets.
 
 ## Using PhpUnit in PhpStorm
 1. PhpUnit By Remote Interpreter

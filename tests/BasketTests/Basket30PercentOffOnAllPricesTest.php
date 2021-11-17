@@ -32,7 +32,7 @@ class Basket30PercentOffOnAllPricesTest extends TestCase
 
         $decoratedBasketTotal = $basket->total();
 
-        $basketTotalWith30PercentOff = round($basketTotal - ($basketTotal * (30 / 100)), 2);
+        $basketTotalWith30PercentOff = $basketTotal - ($basketTotal * (30 / 100));
 
         self::assertNotEquals($basketTotal, $decoratedBasketTotal);
 
